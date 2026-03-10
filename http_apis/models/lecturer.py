@@ -1,15 +1,9 @@
-class Lecturer(object):
+from pydantic import BaseModel
 
-    def __init__(
-        self,
-        name: str,
-        language: str,
-        track: str,
-        programmingLanguage: str,
-        favouriteCourse: str,
-    ) -> None:
-        self.name = name
-        self.language = language
-        self.track = track
-        self.programmingLanguage = programmingLanguage
-        self.favouriteCourse = favouriteCourse
+
+class Lecturer(BaseModel):
+    name: str
+    language: str
+    track: str
+    programmingLanguage: str
+    favouriteCourse: str
