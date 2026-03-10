@@ -1,6 +1,7 @@
 from typing import Optional
 
 from fastapi import FastAPI
+from http_apis.gql.schema import graphql_router
 from http_apis.routers import courses, lecturers, students
 
 app = FastAPI()
@@ -34,3 +35,4 @@ def read_item(item_id: int, q: Optional[str] = None) -> dict[str, int | str | No
 app.include_router(courses.router)
 app.include_router(lecturers.router)
 app.include_router(students.router)
+app.include_router(graphql_router, prefix="/graphql")
